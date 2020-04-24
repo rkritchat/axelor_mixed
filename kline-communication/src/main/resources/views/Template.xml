@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.2.xsd">
+
+    <grid name="communication-template-grid" title="Sms Template" model="com.kline.communication.db.KlineSmsTemplate">
+        <field name="name" title="Category"/>
+        <field name="content" title="Content"/>
+    </grid>
+
+    <form name="communication-template-form" title="Sms Template" model="com.kline.communication.db.KlineSmsTemplate">
+        <field name="name" title="Category" colSpan="12" width="60%"/>
+        <field name="content" title="Content" colSpan="12" width="60%" widget="text" height="15"/>
+    </form>
+
+    <grid name="communication-email-template-grid" title="Email Template" model="com.kline.communication.db.KlineEmailTemplate">
+        <field name="name" title="Category" />
+        <field name="subject" title="Subject"/>
+    </grid>
+
+    <form name="communication-email-template-form" title="Email Template" model="com.kline.communication.db.KlineEmailTemplate">
+        <field name="name" title="Category" colSpan="12" width="40%"/>
+        <field name="subject" title="Subject :" colSpan="12" width="40%"/>
+        <field name="emailCC" colSpan="12" widget="TagSelect" x-create="address" form-view="email-address-form" grid-view="email-address-grid" title="CC" width="40%"/>
+        <field name="emailBCC" colSpan="12" widget="TagSelect" x-create="address" form-view="email-address-form" grid-view="email-address-grid" title="BCC" width="40%"/>
+        <field name="body" title="Body :" colSpan="12" height="380" widget="html"/>
+    </form>
+
+
+    <grid name="communication-email-attachment-transaction-grid" title="Email Attachment" model="com.kline.communication.db.KlineEmailAttachmentTransaction">
+        <field name="metaFile" widget="binary-link" title="Attachment"/>
+    </grid>
+</object-views>
